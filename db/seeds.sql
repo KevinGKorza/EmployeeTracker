@@ -2,9 +2,7 @@ INSERT INTO department (name)
 VALUES ("Human Resources"),
        ("Managment"),
        ("Sales");
-       
-       
-
+  
 INSERT INTO role(title, salary, department_id)
 VALUES ("Human Resources Director", 200000, 0),
        ("Human Resources Assistant", 30000, 1),
