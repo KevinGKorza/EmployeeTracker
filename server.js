@@ -3,6 +3,8 @@ const express = require('express');
 const mysql = require('mysql2');
 const PORT = process.env.PORT || 3001;
 const app = express();
+const inquirer = require('inquirer');
+const consoleTable = require('console.table');
 
 //Express Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -22,6 +24,14 @@ const db = mysql.createConnection(
 
 //
 db.query('SELECT * FROM department', function (err, results) {
+    console.log(results);
+});
+
+db.query('SELECT * FROM role', function (err, results) {
+    console.log(results);
+});
+
+db.query('SELECT * FROM employee', function (err, results) {
     console.log(results);
 });
 

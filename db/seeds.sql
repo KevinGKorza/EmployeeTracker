@@ -2,6 +2,8 @@ INSERT INTO department (name)
 VALUES ("Human Resources"),
        ("Managment"),
        ("Sales");
+
+ SELECT * FROM department;      
   
 INSERT INTO role(title, salary, department_id)
 VALUES ("Human Resources Director", 200000, 0),
@@ -13,6 +15,8 @@ VALUES ("Human Resources Director", 200000, 0),
        ("Promotions", 10000, 6)
        ("Promotions Assistant", 900, 7);
 
+SELECT * FROM role;
+
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Homer", "Simpson", 1, 01),
@@ -23,3 +27,5 @@ VALUES ("Homer", "Simpson", 1, 01),
        ("Maude", "Flanders", 6, 06),
        ("Rod", "Flanders", 7, NULL),
        ("Todd", "Flanders", 8. NULL),
+
+ SELECT * FROM employee;      
