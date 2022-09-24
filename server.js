@@ -74,13 +74,14 @@ const InquirerPrompt = () =>
     }
     else if(InquirerPrompt.choices === "Exit") {
         Connection.end();
+        console.log("Good bye!");
     };
 
 
     //All Department function
     viewAllDepartments = () => {
         console.log("All your departments.");
-        db.query('SELECT department.id AS id, department.name AS department FROM department', function (err, results) {
+        db.query('SELECT department.id AS id, department.name AS department FROM department', function (results) {
             console.log(results);
         });
     }
@@ -88,82 +89,62 @@ const InquirerPrompt = () =>
     //All Roles function
     viewAllRoles = () => {
         console.log("All your roles.");
-        db.query('SELECT roles.id, roles.title, department.name AS department FROM roles LEFT JOIN department ON roles.department_id = department.id', function (err, results) {
+        db.query('SELECT roles.id, roles.title, department.name AS department FROM roles LEFT JOIN department ON roles.department_id = department.id', function (results) {
             console.log(results);
         });
     }
 
+     //All Employees function
+     viewAllEmployees = () => 
+     console.log("All of your employees.");
+     db.query('SELECT * FROM department', function (err, results) {
+         console.log(results);
+     });
+    
     //add roles 
-    addRoles = () => {
+    addRoles = () => 
+    inquirer.createPromptModule([
+        {
+            type: 'input',
+            name: 'roles',
+            message: "Please pick a role?",
+        },
+        {
+            type: 'input',
+            name: 'salary',
+            message: "What is your salary?",
+        }
+    ]);
+
+    //add employee
+
+
+
+
+
+    //update all departments
+
+
+
+
+
+    //update employee information
+
+
+
+
+
+
+    //exit 
+
+
+   
+
+
+
+
+   
     
-        
-
-
-
-    
-    //All Employees function
-    viewAllEmployees = () => {
-        console.log("All of your employees.");
-        db.query('SELECT * FROM department', function (err, results) {
-            console.log(results);
-        });
-    }
-
-    
-
-
-
-
-
-
-
-
-
-
-    //
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -173,24 +154,24 @@ const InquirerPrompt = () =>
 
 
 //////////////////////
-db.query('SELECT * FROM department', function (err, results) {
-    console.log(results);
-});
+//db.query('SELECT * FROM department', function (err, results) {
+    //console.log(results);
+//});
 
-db.query('SELECT * FROM role', function (err, results) {
-    console.log(results);
-});
+//db.query('SELECT * FROM role', function (err, results) {
+    //console.log(results);
+//});
 
-db.query('SELECT * FROM employee', function (err, results) {
-    console.log(results);
-});
+//db.query('SELECT * FROM employee', function (err, results) {
+    //console.log(results);
+//});
 
 //Default response for any other request (NOT FOUND)
-app.use((req, res) => {
-    res.status(404).end();
-});
+//app.use((req, res) => {
+    //res.status(404).end();
+//});
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-});
+//app.listen(PORT, () => {
+    //console.log(`Server running on port ${PORT}`)
+//});
 
