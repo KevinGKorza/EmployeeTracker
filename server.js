@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const inquirer = require('inquirer');
 const consoleTable = require('console.table');
+const Connection = require('mysql2/typings/mysql/lib/Connection');
 
 //Express Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -21,8 +22,157 @@ const db = mysql.createConnection(
     console.log('Connected to the databse.')
 );
 
+//mysql database 
+Connection.connect(function (err) {
+    if (err) return console.log(err);
+    InquirerPrompt();
+})
 
-//
+const InquirerPrompt = () => 
+    inquirer.createPromptModule([
+        {
+            type: 'list',
+            name: 'choices',
+            message: 'Please pick an option',
+            choices: [
+                'View all departments',
+                'View all roles',
+                'View all employees',
+                'Add department',
+                'Add roles',
+                'Add employee',
+                'Update all departments',
+                'Update employee information',
+                'Exit'
+            ]
+        }
+    ])
+
+    if (InquirerPrompt.choices === "View all departments") {
+        viewAllDepartments();
+    }
+    else if (InquirerPrompt.choices === "View all roles") {
+        viewAllRoles();
+    }
+    else if (InquirerPrompt.choices === "View all employees"){
+        viewAllEmployees();
+    }
+    else if(InquirerPrompt.choices === "Add department") {
+        addADepartment();
+    }
+    else if (InquirerPrompt.choices === "Add roles"){
+        addRoles();
+    }
+    else if(InquirerPrompt.choices === "Add employee") {
+        addEmployee();
+    }
+    else if(InquirerPrompt.choices === "Update all departments") {
+        updateAllDepartments();
+    }
+    else if(InquirerPrompt.choices === "Update employee information") {
+        updateEmployeeInformation();
+    }
+    else if(InquirerPrompt.choices === "Exit") {
+        Connection.end();
+    };
+
+
+    //All Department function
+    viewAllDepartments = () => {
+        console.log("All your departments.");
+        db.query('SELECT department.id AS id, department.name AS department FROM department', function (err, results) {
+            console.log(results);
+        });
+    }
+
+    //All Roles function
+    viewAllRoles = () => {
+        console.log("All your roles.");
+        db.query('SELECT roles.id, roles.title, department.name AS department FROM roles LEFT JOIN department ON roles.department_id = department.id', function (err, results) {
+            console.log(results);
+        });
+    }
+
+    //add roles 
+    addRoles = () => {
+    
+        
+
+
+
+    
+    //All Employees function
+    viewAllEmployees = () => {
+        console.log("All of your employees.");
+        db.query('SELECT * FROM department', function (err, results) {
+            console.log(results);
+        });
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+    //
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////
 db.query('SELECT * FROM department', function (err, results) {
     console.log(results);
 });
@@ -43,3 +193,4 @@ app.use((req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 });
+
