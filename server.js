@@ -25,22 +25,22 @@ function start () {
 
 
         if (answer.choices === "View all departments") {
-            viewAllDepartments();
+            //viewAllDepartments();
         }
         else if (answer.choices === "View all roles") {
-            viewAllRoles();
+            //viewAllRoles();
         }
         else if (answer.choices === "View all employees"){
-            viewAllEmployees();
+            //viewAllEmployees();
         }
         else if(answer.choices === "Add department") {
-            addADepartment();
+            //addADepartment();
         }
         else if (answer.choices === "Add roles"){
-            addRoles();
+            //addRoles();
         }
         else if(answer.choices === "Add employee") {
-            addEmployee();
+            //addEmployee();
         }
         else if(answer.choices === "Update all departments") {
             // updateAllDepartments();
@@ -64,20 +64,62 @@ function start () {
         }).then(()=> start())
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     
+    
+    //All Roles function
+
+
+
+    //All Employees
+
+
+
+    //Add Department
+
+
+
+    //Add Roles
+
+
+
+
+    //Add Employee
+
+
+
+    //
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  start()  
+
+
+
+
+
+
+
+
+
+
+
+  //////////////
+
+
 
 //     //All Roles function
 //   const viewAllRoles = () => {
@@ -146,7 +188,7 @@ function start () {
 
 
 
-// start()
+ //start()
    
     
 

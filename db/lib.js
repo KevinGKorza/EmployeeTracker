@@ -10,4 +10,5 @@ class Query {
     }
 }
 
-module.exports = new Query(connection)
+module.exports = new Query(connection);
+
