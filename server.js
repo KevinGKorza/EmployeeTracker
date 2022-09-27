@@ -25,28 +25,28 @@ function start () {
 
 
         if (answer.choices === "View all departments") {
-            //viewAllDepartments();
+            viewAllDepartments();
         }
         else if (answer.choices === "View all roles") {
-            //viewAllRoles();
+            viewAllRoles();
         }
         else if (answer.choices === "View all employees"){
-            //viewAllEmployees();
+            viewAllEmployees();
         }
         else if(answer.choices === "Add department") {
-            //addADepartment();
+            addADepartment();
         }
         else if (answer.choices === "Add roles"){
-            //addRoles();
+            addRoles();
         }
         else if(answer.choices === "Add employee") {
-            //addEmployee();
+            addEmployee();
         }
         else if(answer.choices === "Update all departments") {
-            // updateAllDepartments();
+            updateAllDepartments();
         }
         else if(answer.choices === "Update employee information") {
-            // updateEmployeeInformation();
+            updateEmployeeInformation();
         }
         else if(answer.choices === "Exit") {
             process.exit();
@@ -67,27 +67,75 @@ function start () {
     
     
     //All Roles function
-
-
+    function viewAllRoles () {
+        db.findRoles().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
+   
 
     //All Employees
+    function viewAllEmployees () {
+        db.findEmployees().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
+
 
 
 
     //Add Department
+    function addADepartment () {
+        db.findADepartment().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
+
+
 
 
 
     //Add Roles
+    function addRoles () {
+        db.findARole().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
 
 
 
 
     //Add Employee
+    function addEmployee () {
+        db.findAEmployee().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
 
 
 
-    //
+
+    //Update All Departments
+    function updateAllDepartments () {
+        db.updateADepartment().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
+
+
+
+
+
+
+    //Update Employee Information
+    function updateEmployeeInformation () {
+        db.updateEmployeeInformation().then(([data])=>{
+            console.table(data)
+        }).then(()=> start())
+    }
+
+
+
 
    
 
