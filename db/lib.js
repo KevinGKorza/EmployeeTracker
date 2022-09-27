@@ -1,5 +1,6 @@
 const connection = require('./config')
 
+
 class Query {
     constructor(connection){
         this.connection = connection

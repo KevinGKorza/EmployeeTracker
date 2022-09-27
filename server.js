@@ -62,7 +62,23 @@ function start () {
         db.findDeparments().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please pick a Department',
+                choices: [
+                    'Human Resources',
+                    'Managment',
+                    'Sales'
+                   
+                ]
+            }
+        ])
+        console.log("Your Departments are");
+
+    };
+    
 
     
     
@@ -71,7 +87,25 @@ function start () {
         db.findRoles().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please pick a Role',
+                choices: [
+                    'Human Resources Director',
+                    'Human Resources Assistant',
+                    'Managment Assistant',
+                    'Sales Manager',
+                    'Sales Assistant'
+                   
+                ]
+            }
+        ])
+        console.log();
+
+        
+    };
    
 
     //All Employees
@@ -79,7 +113,24 @@ function start () {
         db.findEmployees().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please pick an Employee',
+                choices: [
+                    'Homer Simpson',
+                    'Marge Simpson',
+                    'Ned Flanders',
+                    'Bart Simpson',
+                    'Lisa Simpson',
+                    'Maude Flanders'
+                   
+                ]
+            }
+        ])
+        console.log();
+    };
 
 
 
@@ -89,7 +140,21 @@ function start () {
         db.findADepartment().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please add a Department',
+                choices: [
+                    'Human Resources',
+                    'Managment',
+                    'Sales'
+                   
+                ]
+            }
+        ])
+        console.log();
+    };
 
 
 
@@ -100,7 +165,21 @@ function start () {
         db.findARole().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please add a role',
+                choices: [
+                    'Human Resources',
+                    'Managment',
+                    'Sales'
+                   
+                ]
+            }
+        ])
+        console.log();
+    };
 
 
 
@@ -110,7 +189,25 @@ function start () {
         db.findAEmployee().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Please add an Department',
+                choices: [
+                    'Homer Simpson',
+                    'Marge Simpson',
+                    'Ned Flanders',
+                    'Bart Simpson',
+                    'Lisa Simpson',
+                    'Maude Flanders'
+                   
+                ]
+            }
+        ])
+        console.log();
+
+    };
 
 
 
@@ -120,7 +217,8 @@ function start () {
         db.updateADepartment().then(([data])=>{
             console.table(data)
         }).then(()=> start())
-    }
+        
+    };
 
 
 
