@@ -75,7 +75,7 @@ function start () {
                 ]
             }
         ])
-        console.log("Your Departments are");
+        console.log();
 
     };
     
@@ -193,7 +193,7 @@ function start () {
             {
                 type: 'list',
                 name: 'choices',
-                message: 'Please add an Department',
+                message: 'Please add an Employee',
                 choices: [
                     'Homer Simpson',
                     'Marge Simpson',
@@ -217,6 +217,22 @@ function start () {
         db.updateADepartment().then(([data])=>{
             console.table(data)
         }).then(()=> start())
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Update Departments',
+                choices: [
+                    'Human Resources',
+                    'Managment',
+                    'Sales'
+                   
+                ]
+            }
+        ])
+        console.log();
+
+
         
     };
 
@@ -230,6 +246,24 @@ function start () {
         db.updateEmployeeInformation().then(([data])=>{
             console.table(data)
         }).then(()=> start())
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'choices',
+                message: 'Update Employee',
+                choices: [
+                    'Homer Simpson',
+                    'Marge Simpson',
+                    'Ned Flanders',
+                    'Bart Simpson',
+                    'Lisa Simpson',
+                    'Maude Flanders'
+                   
+                ]
+            }
+        ])
+        console.log();
+
     }
 
 
