@@ -32,6 +32,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 
 Screen capture:
+<img width="1430" alt="Screen Shot 2022-09-28 at 4 01 59 PM" src="https://user-images.githubusercontent.com/107637260/192877980-53206aea-8813-4700-915f-a82067fb10ef.png">
 
 
 

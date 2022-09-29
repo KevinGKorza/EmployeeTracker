@@ -154,7 +154,7 @@ function start () {
             }
         ])
         console.log();
-    };
+    }
 
 
 
